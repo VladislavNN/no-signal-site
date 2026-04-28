@@ -1,0 +1,596 @@
+﻿<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="NO SIGNAL - интерактивный промо-сайт лиминального инди-хоррора."
+    />
+    <meta property="og:title" content="NO SIGNAL - Лиминальный хоррор" />
+    <meta property="og:description" content="Станция, которой нет на карте. Сигнал приходит первым." />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/og-preview.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="NO SIGNAL - Лиминальный хоррор" />
+    <meta name="twitter:description" content="Инди-хоррор про станцию, которой нет на карте." />
+    <meta name="twitter:image" content="assets/og-preview.png" />
+    <meta name="twitter:image:alt" content="NO SIGNAL - dark liminal horror station key art" />
+    <meta name="theme-color" content="#030608" />
+    <title>NO SIGNAL - Лиминальный хоррор</title>
+    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml" />
+    <link rel="preload" href="assets/images/liminal-hero.webp" as="image" type="image/webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=Inter:wght@500;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css?v=release-fade" />
+  </head>
+  <body>
+    <div class="boot" data-boot>
+      <div>
+        <span>CONNECTING TO SECTOR 06</span>
+        <strong data-boot-text>SIGNAL SEARCH...</strong>
+      </div>
+      <i></i>
+    </div>
+    <div class="screen-fx" aria-hidden="true"></div>
+    <div class="easter" data-easter>ТЫ УЖЕ БЫЛ ЗДЕСЬ</div>
+    <div class="lightbox" data-lightbox aria-hidden="true">
+      <button type="button" data-lightbox-close aria-label="Закрыть скриншот">close</button>
+      <img data-lightbox-image alt="" />
+      <p data-lightbox-caption></p>
+    </div>
+    <div class="press-modal" data-press-modal aria-hidden="true">
+      <section>
+        <button type="button" data-press-close aria-label="Закрыть press kit">close</button>
+        <p class="micro">press kit</p>
+        <h2>NO SIGNAL</h2>
+        <p>
+          Лиминальный психологический хоррор про подземную станцию, которой нет
+          на карте. Игрок слушает частоты, сверяет камеры и открывает двери,
+          которые срабатывают раньше команды.
+        </p>
+        <dl>
+          <div><dt>Жанр</dt><dd>Psychological / liminal horror</dd></div>
+          <div><dt>Платформы</dt><dd>PC</dd></div>
+          <div><dt>Языки</dt><dd>RU / EN</dd></div>
+          <div><dt>Контакт</dt><dd>press@nosignal.game</dd></div>
+        </dl>
+        <div class="press-shots">
+          <img src="assets/images/flooded-platform.webp" alt="" loading="lazy" decoding="async" />
+          <img src="assets/images/control-room.webp" alt="" loading="lazy" decoding="async" />
+          <img src="assets/images/server-archive.webp" alt="" loading="lazy" decoding="async" />
+        </div>
+      </section>
+    </div>
+    <div class="wishlist-modal" data-wishlist-modal aria-hidden="true">
+      <section>
+        <button type="button" data-wishlist-close aria-label="Закрыть wishlist">close</button>
+        <p class="micro">steam page mockup</p>
+        <div class="steam-layout">
+          <img src="assets/images/liminal-hero.webp" alt="" loading="lazy" decoding="async" />
+          <div>
+            <h2>NO SIGNAL</h2>
+            <p>
+              Короткий лиминальный хоррор про закрытую станцию, частоты, камеры и маршруты,
+              которые появляются раньше команды игрока.
+            </p>
+            <div class="steam-tags" aria-label="Steam tags">
+              <span>Psychological Horror</span>
+              <span>Liminal</span>
+              <span>Exploration</span>
+              <span>Singleplayer</span>
+            </div>
+            <dl>
+              <div><dt>Demo</dt><dd>15 minutes</dd></div>
+              <div><dt>Release</dt><dd>Q4 2026</dd></div>
+              <div><dt>Platform</dt><dd>PC</dd></div>
+              <div><dt>Languages</dt><dd>RU / EN</dd></div>
+            </dl>
+            <div class="steam-actions">
+              <button type="button" data-wishlist-confirm>wishlist confirmed</button>
+              <button type="button" data-demo-open>download demo</button>
+            </div>
+          </div>
+        </div>
+        <div class="steam-shots">
+          <img src="assets/images/flooded-platform.webp" alt="" loading="lazy" decoding="async" />
+          <img src="assets/images/control-room.webp" alt="" loading="lazy" decoding="async" />
+          <img src="assets/images/ticket-hall.webp" alt="" loading="lazy" decoding="async" />
+        </div>
+      </section>
+    </div>
+    <div class="demo-modal" data-demo-modal aria-hidden="true">
+      <section>
+        <button type="button" data-demo-close aria-label="Закрыть demo package">close</button>
+        <p class="micro">demo package</p>
+        <h2>Demo build 0.31.6</h2>
+        <p>
+          Пакет выглядит как реальный билд, но на лендинге это безопасная имитация загрузки:
+          сайт показывает параметры, checksum и предупреждение системы.
+        </p>
+        <dl>
+          <div><dt>Size</dt><dd>1.8 GB</dd></div>
+          <div><dt>Build</dt><dd>0.31.6 / archived</dd></div>
+          <div><dt>Checksum</dt><dd>31B7-06AF-LOCKED</dd></div>
+          <div><dt>Warning</dt><dd>route memory may change</dd></div>
+        </dl>
+        <div class="demo-warning">
+          Запуск демо может открыть B-7 до ввода команды.
+        </div>
+        <button type="button" data-demo-confirm>begin download</button>
+      </section>
+    </div>
+    <div class="trailer-modal" data-trailer-modal aria-hidden="true">
+      <section>
+        <button type="button" data-trailer-close aria-label="Закрыть трейлер">close</button>
+        <p class="micro">recovered tape / full playback</p>
+        <video
+          data-trailer-video
+          controls
+          playsinline
+          preload="metadata"
+          poster="assets/images/control-room.webp"
+        >
+          <source src="assets/video/no-signal-trailer-radio-tape.mp4" type="video/mp4" />
+        </video>
+        <div class="trailer-caption">
+          <strong>NO SIGNAL - anomaly trailer</strong>
+          <span>00:18 / sector 06 / archived build</span>
+        </div>
+      </section>
+    </div>
+    <div class="toast-stack" data-toast-stack aria-live="polite"></div>
+    <aside class="fear-meter" aria-label="Уровень страха">
+      <span>fear level</span>
+      <strong data-fear-output>00%</strong>
+      <i><b data-fear-bar></b></i>
+    </aside>
+
+    <header class="nav-shell">
+      <a class="brand" href="#top">NO SIGNAL</a>
+      <nav aria-label="Навигация">
+        <a href="#trailer">Tape</a>
+        <a href="#scanner">Сканер</a>
+        <a href="#map">Map</a>
+        <a href="#terminal">Терминал</a>
+        <a href="#screens">Кадры</a>
+        <a href="#release">Релиз</a>
+      </nav>
+      <button class="lang-toggle" type="button" data-lang-toggle>RU / EN</button>
+      <button class="sound-toggle" type="button" data-sound>sound off</button>
+    </header>
+
+    <main id="top">
+      <section class="hero-liminal">
+        <img
+          class="hero-art"
+          src="assets/images/liminal-hero.webp"
+          alt="Пустой подземный переход с холодным циановым светом и красным аварийным сигналом"
+          fetchpriority="high"
+          decoding="async"
+        />
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="hero-ui">
+          <p class="micro">build 0.31 / underground sector / signal depth 6</p>
+          <h1 data-scramble data-secret>NO SIGNAL</h1>
+          <p class="lead">
+            Лиминальный инди-хоррор про станцию, которой нет на карте. Камеры
+            показывают соседние версии коридоров, а звук всегда приходит первым.
+          </p>
+          <div class="hero-actions">
+            <a class="neo-button primary" href="#trailer"><span>смотреть запись</span></a>
+            <a class="neo-button" href="#terminal"><span>открыть терминал</span></a>
+          </div>
+        </div>
+
+        <aside class="signal-card">
+          <span class="pulse"></span>
+          <p>active anomaly</p>
+          <strong>031.6 Hz</strong>
+          <small>voice detected behind platform wall</small>
+        </aside>
+
+        <div class="ticker" aria-label="Системные сообщения">
+          <span>no map data</span>
+          <span>platform flooded</span>
+          <span>operator missing</span>
+          <span>door opens before command</span>
+        </div>
+      </section>
+
+      <section class="about-game quiet-section" id="about">
+        <div class="copy-block">
+          <p class="micro">about the game</p>
+          <h2>Это хоррор про место, которое отвечает раньше игрока.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            NO SIGNAL - короткий лиминальный хоррор от первого лица. Игрок
+            исследует закрытую станцию, сверяет камеры, ловит частоты и
+            открывает маршруты, которые не совпадают с картой.
+          </p>
+          <p>
+            Напряжение строится через звук, неправильную инфраструктуру и
+            ощущение, что система уже знает твой следующий шаг.
+          </p>
+        </div>
+      </section>
+
+      <section class="inventory-zone quiet-section" aria-label="Инвентарь">
+        <div class="copy-block">
+          <p class="micro">inventory</p>
+          <h2>Четыре предмета. Ни один не должен быть здесь.</h2>
+        </div>
+        <div class="inventory-grid">
+          <button type="button" data-item="keycard">
+            <span>01</span>
+            <img class="item-image" src="assets/images/card-keycard.webp" alt="" loading="lazy" decoding="async" />
+            <strong>ключ-карта</strong>
+            <small>Метка доступа: B-7. Напечатана завтрашней датой.</small>
+          </button>
+          <button type="button" data-item="tape">
+            <span>02</span>
+            <img class="item-image" src="assets/images/card-cassette.webp" alt="" loading="lazy" decoding="async" />
+            <strong>кассета</strong>
+            <small>Содержит твою последнюю команду терминала.</small>
+          </button>
+          <button type="button" data-item="map">
+            <span>03</span>
+            <img class="item-image" src="assets/images/card-map.webp" alt="" loading="lazy" decoding="async" />
+            <strong>мокрая карта</strong>
+            <small>Чернила двигаются, когда сканер ловит сигнал.</small>
+          </button>
+          <button type="button" data-item="badge">
+            <span>04</span>
+            <img class="item-image" src="assets/images/card-badge.webp" alt="" loading="lazy" decoding="async" />
+            <strong>бейдж оператора</strong>
+            <small>Фото выцарапано с внутренней стороны.</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="trailer-zone quiet-section" id="trailer">
+        <div class="copy-block">
+          <p class="micro">recovered tape</p>
+          <h2>Трейлер как системный сбой, а не просто видео.</h2>
+          <p>
+            Нажатие запускает “архив”: интерфейс меняет состояние, кадр оживает,
+            и сайт начинает ощущаться как часть игры.
+          </p>
+        </div>
+        <div class="tape-player" data-tape>
+          <img
+            src="assets/images/control-room.webp"
+            alt="Заброшенная диспетчерская с холодным светом мониторов"
+            loading="lazy"
+            decoding="async"
+          />
+          <video
+            class="tape-video"
+            data-inline-trailer
+            controls
+            playsinline
+            preload="metadata"
+            poster="assets/images/control-room.webp"
+          >
+          <source src="assets/video/no-signal-trailer-radio-tape.mp4" type="video/mp4" />
+          </video>
+          <button class="play-core" type="button" aria-label="Запустить трейлер">
+            <span></span>
+          </button>
+          <div class="tape-hud">
+            <strong data-tape-state>tape paused</strong>
+            <small>CAM / CONTROL / 00:20</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="loop" id="loop">
+        <div class="copy-block wide">
+          <p class="micro">gameplay loop</p>
+          <h2>Игрок не сражается. Игрок собирает маршрут из ошибок.</h2>
+        </div>
+        <div class="loop-grid">
+          <article>
+            <span>01</span>
+            <img class="loop-card-image" src="assets/images/card-loop-signal.webp" alt="" loading="lazy" decoding="async" />
+            <h3>Слушай сигнал</h3>
+            <p>Шум воды, эхо шагов и голос на частоте 31.6 заменяют привычный компас.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <img class="loop-card-image" src="assets/images/card-loop-cameras.webp" alt="" loading="lazy" decoding="async" />
+            <h3>Сверяй камеры</h3>
+            <p>Мониторы показывают варианты станции, где часть дверей уже была открыта.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <img class="loop-card-image" src="assets/images/card-loop-door.webp" alt="" loading="lazy" decoding="async" />
+            <h3>Открывай не ту дверь</h3>
+            <p>Каждая команда меняет план. Правильный путь часто выглядит как ошибка.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="scanner quiet-section" id="scanner">
+        <div class="scanner-panel">
+          <div class="copy-block">
+            <p class="micro">frequency scanner</p>
+            <h2>Поймай частоту 31.6 Hz.</h2>
+            <p>
+              На нужной частоте интерфейс раскрывает скрытый фрагмент. На
+              остальных слышен только пустой тоннель.
+            </p>
+          </div>
+          <div class="frequency-box">
+            <output data-frequency-output>00.0 Hz</output>
+            <input
+              aria-label="Частота сканера"
+              data-frequency
+              type="range"
+              min="0"
+              max="100"
+              value="0"
+              step="0.1"
+            />
+            <div class="frequency-status" data-frequency-status>
+              signal absent / move scanner
+            </div>
+            <div class="hidden-fragment" data-hidden-fragment>
+              “Не ищи выход. Станция строит его после твоего последнего шага.”
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="map-zone" id="map">
+        <div class="copy-block">
+          <p class="micro">station map</p>
+          <h2>Карта станции ломается в реальном времени.</h2>
+          <p>
+            Узлы появляются не по плану, а по звуку. Красные маршруты отмечают
+            участки, которые система уже стерла из навигации.
+          </p>
+        </div>
+        <div class="station-map" data-station-map aria-label="Фальшивая карта станции">
+          <div class="map-top">
+            <span>SECTOR 06 / ROUTE VIEW</span>
+            <strong data-map-status>MAP DESYNC 41%</strong>
+          </div>
+          <span class="node n1">A</span>
+          <span class="node n2">B-7</span>
+          <span class="node n3">06</span>
+          <span class="node n4">?</span>
+          <span class="node n5">B-7</span>
+          <span class="line l1"></span>
+          <span class="line l2 broken"></span>
+          <span class="line l3"></span>
+          <span class="line l4 broken"></span>
+          <div class="map-legend">
+            <span><i></i> active path</span>
+            <span><i></i> missing path</span>
+            <span>last ping: 03:17</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="signals" id="signals">
+        <div class="copy-block wide">
+          <p class="micro">game feel</p>
+          <h2>Страх строится не монстром, а поведением пространства.</h2>
+        </div>
+        <div class="signal-grid">
+          <article>
+            <span>01</span>
+            <img class="signal-card-image" src="assets/images/card-feel-station.webp" alt="" loading="lazy" decoding="async" />
+            <h3>Динамическая станция</h3>
+            <p>Переходы сдвигаются после каждого найденного аудио-фрагмента.</p>
+          </article>
+          <article>
+            <span>02</span>
+            <img class="signal-card-image" src="assets/images/card-feel-sound.webp" alt="" loading="lazy" decoding="async" />
+            <h3>Звук как навигация</h3>
+            <p>Шаги, шум воды и голос за стеной заменяют привычные маркеры.</p>
+          </article>
+          <article>
+            <span>03</span>
+            <img class="signal-card-image" src="assets/images/card-feel-cameras.webp" alt="" loading="lazy" decoding="async" />
+            <h3>Камеры видят другое</h3>
+            <p>Экран наблюдения показывает версию локации, где игрок уже пропал.</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="signal-archive quiet-section" id="archive">
+        <div class="copy-block">
+          <p class="micro">signals archive</p>
+          <h2>Три записи, которые терминал не должен был сохранить.</h2>
+        </div>
+        <div class="archive-grid">
+          <button type="button" data-signal="scanner">
+            <span>031.6 Hz</span>
+            <i class="archive-visual wave-a" aria-hidden="true">
+              <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+            </i>
+            <strong>voice behind wall</strong>
+            <small>Фрагмент голоса совпадает с последней командой игрока.</small>
+          </button>
+          <button type="button" data-signal="glitch">
+            <span>water loop</span>
+            <i class="archive-visual wave-b" aria-hidden="true">
+              <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+            </i>
+            <strong>platform drain</strong>
+            <small>Вода слышна даже на сухих участках станции.</small>
+          </button>
+          <button type="button" data-signal="unlock">
+            <span>operator last call</span>
+            <i class="archive-visual wave-c" aria-hidden="true">
+              <b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b><b></b>
+            </i>
+            <strong>door before command</strong>
+            <small>Замок открывается за 0.8 секунды до ввода.</small>
+          </button>
+        </div>
+      </section>
+
+      <section class="terminal-zone" id="terminal">
+        <div class="copy-block">
+          <p class="micro">interactive terminal</p>
+          <h2>Введи команду: scan, map, open b-7, play tape.</h2>
+        </div>
+        <div class="terminal">
+          <div class="terminal-output" data-terminal-output>
+            <p>> sector 06 terminal ready</p>
+            <p>> commands: scan / map / open b-7 / play tape</p>
+          </div>
+          <form class="terminal-form" data-terminal-form>
+            <span>&gt;</span>
+            <input
+              data-terminal-input
+              autocomplete="off"
+              spellcheck="false"
+              aria-label="Команда терминала"
+              placeholder="scan"
+            />
+            <button type="submit">send</button>
+          </form>
+        </div>
+      </section>
+
+      <section class="secret-door" data-secret-door>
+        <div>
+          <p class="micro">B-7 sequence</p>
+          <h2>
+            Закрытый маршрут: введи scan, поймай 31.6 Hz, затем
+            <span class="nowrap">open B-7</span>.
+          </h2>
+          <ul class="puzzle-checklist">
+            <li data-step="scan">scan sector</li>
+            <li data-step="freq">lock 31.6 Hz</li>
+            <li data-step="open">open B-7</li>
+          </ul>
+          <p data-puzzle-status>sequence incomplete / door sealed</p>
+        </div>
+      </section>
+
+      <section class="ending" data-ending>
+        <img src="assets/images/emergency-stairs.webp" alt="" loading="lazy" decoding="async" />
+        <div>
+          <p class="micro">secret ending</p>
+          <h2>ПЛАТФОРМА У ТЕБЯ ЗА СПИНОЙ.</h2>
+          <p>B-7 больше не дверь. Теперь это маршрут, который карта отказывается рисовать.</p>
+          <a class="neo-button primary" href="#screens"><span>войти в B-7</span></a>
+        </div>
+      </section>
+
+      <section class="screens" id="screens">
+        <figure class="shot hero-shot">
+          <img src="assets/images/flooded-platform.webp" alt="Затопленная подземная платформа" loading="lazy" decoding="async" />
+          <figcaption>flooded platform / sector 06</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/images/control-room.webp" alt="Темная диспетчерская с мониторами" loading="lazy" decoding="async" />
+          <figcaption>operator room / signal source</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/images/ticket-hall.webp" alt="Пустой зал турникетов метро" loading="lazy" decoding="async" />
+          <figcaption>ticket hall / access denied</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/images/server-archive.webp" alt="Темный серверный архив" loading="lazy" decoding="async" />
+          <figcaption>server archive / voice cache</figcaption>
+        </figure>
+        <figure class="shot">
+          <img src="assets/images/emergency-stairs.webp" alt="Аварийная лестница в темноту" loading="lazy" decoding="async" />
+          <figcaption>stairwell / lower access</figcaption>
+        </figure>
+      </section>
+
+      <section class="press-zone">
+        <div class="copy-block wide">
+          <p class="micro">found coverage</p>
+          <h2>Отзывы, восстановленные с терминалов, которые никогда не были в сети.</h2>
+        </div>
+        <div class="quote-grid">
+          <figure>
+            <span class="quote-meta">terminal dump / source 01</span>
+            <blockquote>«Станция помнит тебя еще до прибытия».</blockquote>
+            <figcaption>НИЗКОЕ РАЗРЕШЕНИЕ</figcaption>
+          </figure>
+          <figure>
+            <span class="quote-meta">offline review / source 02</span>
+            <blockquote>«Хоррор о том, как инфраструктура лжет тебе».</blockquote>
+            <figcaption>ПУСТОЙ КАНАЛ</figcaption>
+          </figure>
+          <figure>
+            <span class="quote-meta">lost channel / source 06</span>
+            <blockquote>«Никакого монстра. Только доказательство, что коридор изменился».</blockquote>
+            <figcaption>КАНАЛ 06</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="release" id="release">
+        <p class="micro">wishlist / pc / q4 2026</p>
+        <h2>Если станция появилась в списке, она уже знает твой маршрут.</h2>
+        <div class="demo-card">
+          <span>Demo available</span>
+          <dl>
+            <div><dt>Demo</dt><dd>15 minutes</dd></div>
+            <div><dt>Platforms</dt><dd>PC</dd></div>
+            <div><dt>Languages</dt><dd>RU / EN</dd></div>
+            <div><dt>Release</dt><dd>Q4 2026</dd></div>
+          </dl>
+        </div>
+        <div class="platforms">
+          <span>PC</span>
+          <span>RU / EN</span>
+          <span>Один игрок</span>
+          <span>Без боя</span>
+        </div>
+        <div class="requirements">
+          <span>system requirements</span>
+          <dl>
+            <div><dt>OS</dt><dd>Windows 10 / 11</dd></div>
+            <div><dt>CPU</dt><dd>Intel i5-8400</dd></div>
+            <div><dt>RAM</dt><dd>8 GB</dd></div>
+            <div><dt>GPU</dt><dd>GTX 1060</dd></div>
+          </dl>
+        </div>
+        <div class="cta-grid">
+          <button class="neo-button primary" type="button" data-wishlist-open><span>в желаемое steam</span></button>
+          <button class="neo-button" type="button" data-demo-open><span>скачать демо</span></button>
+          <button class="neo-button" type="button" data-press-open><span>пресс-кит</span></button>
+          <a
+            class="neo-button"
+            href="https://discord.gg/GtJb6CZ6HN"
+            target="_blank"
+            rel="noopener noreferrer"
+            data-external-route
+          >
+            <span>доступ discord</span>
+          </a>
+        </div>
+        <form class="distress" data-distress-form>
+          <label for="distress">distress call</label>
+          <div>
+            <input id="distress" data-distress-input value="СЕКТОР 06 / ЗАПРОС ЭВАКУАЦИИ" />
+            <button type="submit">отправить</button>
+          </div>
+          <p data-distress-output>signal waiting...</p>
+        </form>
+      </section>
+    </main>
+
+    <script src="script.js?v=final-polish-audio-responsive"></script>
+  </body>
+</html>
+
