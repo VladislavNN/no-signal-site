@@ -53,7 +53,7 @@ const externalRoutes = document.querySelectorAll("[data-external-route]");
 const langToggle = document.querySelector("[data-lang-toggle]");
 
 const glyphs = "NOSIGNAL0316_";
-let soundOn = false;
+let soundOn = true;
 let secretClicks = 0;
 let fearLevel = 0;
 let puzzleScanned = false;
@@ -63,6 +63,7 @@ let frequencyFearRaised = false;
 let criticalLineShown = false;
 let currentLang = localStorage.getItem("noSignalLang") || "ru";
 let trailerAudioLocked = false;
+let audioUnlockArmed = false;
 const sounds = {
   ambient: new Audio("assets/audio/ambient-horror.mp3"),
   click: new Audio("assets/audio/ui-click.mp3"),
@@ -208,6 +209,12 @@ function showToast(message) {
   window.setTimeout(() => toast.remove(), 2800);
 }
 
+function syncSoundToggle() {
+  if (!soundButton) return;
+  soundButton.textContent = soundOn ? "sound on" : "sound off";
+  document.body.classList.toggle("audio-on", soundOn);
+}
+
 function raiseFear(amount) {
   fearLevel = Math.min(100, fearLevel + amount);
   const formatted = String(Math.round(fearLevel)).padStart(2, "0");
@@ -224,8 +231,9 @@ function raiseFear(amount) {
 }
 
 function startAmbient() {
-  sounds.ambient.currentTime = 0;
-  sounds.ambient.play().catch(() => {});
+  if (trailerAudioLocked) return Promise.resolve();
+  if (sounds.ambient.paused) sounds.ambient.currentTime = 0;
+  return sounds.ambient.play();
 }
 
 function stopAmbient() {
@@ -248,7 +256,34 @@ function lockSiteAudioForTrailer(video) {
 function unlockSiteAudioAfterTrailer() {
   if (!trailerAudioLocked) return;
   trailerAudioLocked = false;
-  if (soundOn) startAmbient();
+  if (soundOn) startAmbient().catch(armAudioUnlock);
+}
+
+function armAudioUnlock() {
+  if (audioUnlockArmed || !soundOn) return;
+  audioUnlockArmed = true;
+  showToast("audio armed / click to unlock");
+
+  const unlock = () => {
+    if (!soundOn || trailerAudioLocked) return;
+    startAmbient()
+      .then(() => {
+        audioUnlockArmed = false;
+        window.removeEventListener("pointerdown", unlock);
+        window.removeEventListener("keydown", unlock);
+      })
+      .catch(() => {});
+  };
+
+  window.addEventListener("pointerdown", unlock, { once: true });
+  window.addEventListener("keydown", unlock, { once: true });
+}
+
+function tryAutoStartAmbient(delay = 0) {
+  if (!soundOn) return;
+  window.setTimeout(() => {
+    startAmbient().catch(armAudioUnlock);
+  }, delay);
 }
 
 function playSound(name, force = false) {
@@ -299,16 +334,18 @@ inlineTrailer?.addEventListener("pause", () => {
 
 soundButton?.addEventListener("click", () => {
   soundOn = !soundOn;
-  soundButton.textContent = soundOn ? "sound on" : "sound off";
-  document.body.classList.toggle("audio-on", soundOn);
+  syncSoundToggle();
   playSound("click", true);
   if (soundOn && !trailerAudioLocked) {
-    startAmbient();
+    startAmbient().catch(armAudioUnlock);
   } else {
     stopAmbient();
   }
   raiseFear(4);
 });
+
+syncSoundToggle();
+tryAutoStartAmbient(introSeen ? 620 : 1800);
 
 function scramble() {
   if (!scrambleTitle) return;
