@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://nosignal.game/sitemap.xml
+Sitemap: https://vladislavnn.github.io/no-signal-site/sitemap.xml
