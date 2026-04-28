@@ -15,7 +15,7 @@ Static indie horror landing page for a liminal horror game concept.
 - `assets/og-preview.png` - 1200x630 social preview image.
 - `robots.txt` and `sitemap.xml` - static deploy metadata for Netlify, Vercel, and GitHub Pages.
 
-Before deploy, replace the placeholder `https://nosignal.game/` in `robots.txt` and `sitemap.xml` with the production domain.
+Published URL: `https://vladislavnn.github.io/no-signal-site/`.
 
 ## Notes
 
